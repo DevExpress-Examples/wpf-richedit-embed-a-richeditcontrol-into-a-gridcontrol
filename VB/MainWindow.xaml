@@ -1,0 +1,42 @@
+﻿<Window x:Class="RichInGridColumnWpf.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:dxre="http://schemas.devexpress.com/winfx/2008/xaml/richedit"
+        xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid"
+        Title="MainWindow" Height="350" Width="525">
+
+    <Window.Resources>
+        <ResourceDictionary>
+            <dxre:RtfToContentConverter x:Key="rtfToContentConverter" />
+        </ResourceDictionary>
+    </Window.Resources>
+
+    <Grid>
+        <dxg:GridControl Name="gridControl1">
+            <dxg:GridControl.Columns>
+                <dxg:GridColumn FieldName="Id" />
+                <dxg:GridColumn FieldName="Price" />
+                <dxg:GridColumn FieldName="Description">
+                    
+                    <dxg:GridColumn.DisplayTemplate>
+                        <ControlTemplate>
+                            <dxre:RichEditControl Name="reDisplay" Height="50" Loaded="richEditControl_Loaded"
+                                                  Content="{Binding Value, Mode=OneWay, Converter={StaticResource rtfToContentConverter}}" />
+                        </ControlTemplate>
+                    </dxg:GridColumn.DisplayTemplate>
+
+                    <dxg:GridColumn.EditTemplate>
+                        <ControlTemplate>
+                            <dxre:RichEditControl Name="PART_Editor" Height="50" ActiveViewType="Simple" Loaded="richEditControl_Loaded"
+                                                  Content="{Binding EditValue, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource rtfToContentConverter}}" />
+                        </ControlTemplate>
+                    </dxg:GridColumn.EditTemplate>
+
+                </dxg:GridColumn>
+            </dxg:GridControl.Columns>
+            <dxg:GridControl.View>
+                <dxg:TableView Name="tableView1" />
+            </dxg:GridControl.View>
+        </dxg:GridControl>
+    </Grid>
+</Window>
