@@ -8,6 +8,12 @@
     <Window.Resources>
         <ResourceDictionary>
             <dxre:RtfToContentConverter x:Key="rtfToContentConverter" />
+            <Style x:Key="richEditStyle" TargetType="dxre:RichEditControl">
+                <Setter Property="ShowBorder" Value="False"/>
+                <Setter Property="ActiveViewType" Value="Simple"/>
+                <Setter Property="VerticalScrollBarVisibility" Value="Collapsed"/>
+                <Setter Property="HorizontalScrollBarVisibility" Value="Collapsed"/>
+            </Style>
         </ResourceDictionary>
     </Window.Resources>
 
@@ -17,21 +23,18 @@
                 <dxg:GridColumn FieldName="Id" />
                 <dxg:GridColumn FieldName="Price" />
                 <dxg:GridColumn FieldName="Description">
-                    
-                    <dxg:GridColumn.DisplayTemplate>
-                        <ControlTemplate>
-                            <dxre:RichEditControl Name="reDisplay" Height="50" Loaded="richEditControl_Loaded"
-                                                  Content="{Binding Value, Mode=OneWay, Converter={StaticResource rtfToContentConverter}}" />
-                        </ControlTemplate>
-                    </dxg:GridColumn.DisplayTemplate>
-
-                    <dxg:GridColumn.EditTemplate>
-                        <ControlTemplate>
-                            <dxre:RichEditControl Name="PART_Editor" Height="50" ActiveViewType="Simple" Loaded="richEditControl_Loaded"
-                                                  Content="{Binding EditValue, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource rtfToContentConverter}}" />
-                        </ControlTemplate>
-                    </dxg:GridColumn.EditTemplate>
-
+                    <dxg:GridColumn.CellDisplayTemplate>
+                        <DataTemplate>
+                            <dxre:RichEditControl Height="50" Style="{StaticResource richEditStyle}"
+                                                  Content="{Binding Path=Value, Mode=OneWay, Converter={StaticResource rtfToContentConverter}}" />
+                        </DataTemplate>
+                    </dxg:GridColumn.CellDisplayTemplate>
+                    <dxg:GridColumn.CellEditTemplate>
+                        <DataTemplate>
+                            <dxre:RichEditControl Height="50" Style="{StaticResource richEditStyle}"
+                                                  Content="{Binding Path=Value, Mode=TwoWay, Converter={StaticResource rtfToContentConverter}}" />
+                        </DataTemplate>
+                    </dxg:GridColumn.CellEditTemplate>
                 </dxg:GridColumn>
             </dxg:GridControl.Columns>
             <dxg:GridControl.View>
