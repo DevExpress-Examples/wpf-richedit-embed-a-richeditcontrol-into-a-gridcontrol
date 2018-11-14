@@ -15,16 +15,7 @@ namespace RichInGridColumnWpf {
                 new Invoice { Id = 3, Price = 20m, Description = @"{\rtf1\deff0{\fonttbl{\f0 Times New Roman;}{\f1 Consolas;}}{\colortbl\red0\green0\blue0 ;\red0\green0\blue255 ;\red163\green21\blue21 ;}{\*\listoverridetable}{\stylesheet {\ql\cf0 Normal;}{\*\cs1\cf0 Default Paragraph Font;}{\*\cs2\sbasedon1\cf0 Line Number;}{\*\cs3\ul\cf1 Hyperlink;}}\sectd\pard\plain\ql{\f1\fs18\cf2 Invoice3}\par}" } 
             };
 
-            gridControl1.DataSource = invoices;
-        }
-
-        private void richEditControl_Loaded(object sender, RoutedEventArgs e) {
-            RichEditControl richEditControl = (RichEditControl)sender;
-
-            richEditControl.ShowBorder = false;
-            richEditControl.ActiveViewType = RichEditViewType.Simple;
-            richEditControl.HorizontalScrollBarVisibility = System.Windows.Visibility.Collapsed;
-            richEditControl.VerticalScrollBarVisibility = System.Windows.Visibility.Collapsed;
+            gridControl1.ItemsSource = invoices;
         }
     }
 
