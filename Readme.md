@@ -3,13 +3,17 @@
 [![](https://img.shields.io/badge/Open_in_DevExpress_Support_Center-FF7200?style=flat-square&logo=DevExpress&logoColor=white)](https://supportcenter.devexpress.com/ticket/details/E3178)
 [![](https://img.shields.io/badge/📖_How_to_use_DevExpress_Examples-e9f6fc?style=flat-square)](https://docs.devexpress.com/GeneralInformation/403183)
 <!-- default badges end -->
-# DXRichEdit for WPF: How to embed a RichEditControl into a GridControl
+# Rich Text Editor for WPF: How to Embed a RichEditControl into a GridControl
 
+This example illustrates how to use RichEditControl as an in-place editor in the GridControl column.
 
-<p>This example illustrates how to use a RichEditControl as an in-place editor in the GridControl column.</p><p><strong>See also:</strong><br />
-<a href="https://www.devexpress.com/Support/Center/p/E2030">How to embed a RichTextBox into the DXGrid</a> <br />
-<a href="https://www.devexpress.com/Support/Center/p/E2794">DXRichEdit for WPF: How to establish data binding for the RichEditControl to bind text in different formats</a></p>
+## Files to Review
+* [MainWindow.xaml.cs](./CS/MainWindow.xaml.cs) (VB: [MainWindow.xaml.vb](./VB/MainWindow.xaml.vb))
 
-<br/>
+## More Examples
+
+* [How to embed a RichTextBox into the DXGrid](https://github.com/DevExpress-Examples/wpf-data-grid-embed-a-richtextbox-into-grid-cells)
+*[DXRichEdit for WPF: How to establish data binding for the RichEditControl to bind text in different formats](https://github.com/DevExpress-Examples/wpf-richedit-bind-richeditcontrol-to-text-in-different-formats)
+
 
 
