@@ -13,7 +13,7 @@ This example illustrates how to use RichEditControl as an in-place editor in the
 ## More Examples
 
 * [How to embed a RichTextBox into the DXGrid](https://github.com/DevExpress-Examples/wpf-data-grid-embed-a-richtextbox-into-grid-cells)
-*[DXRichEdit for WPF: How to establish data binding for the RichEditControl to bind text in different formats](https://github.com/DevExpress-Examples/wpf-richedit-bind-richeditcontrol-to-text-in-different-formats)
+* [DXRichEdit for WPF: How to establish data binding for the RichEditControl to bind text in different formats](https://github.com/DevExpress-Examples/wpf-richedit-bind-richeditcontrol-to-text-in-different-formats)
 
 
 
